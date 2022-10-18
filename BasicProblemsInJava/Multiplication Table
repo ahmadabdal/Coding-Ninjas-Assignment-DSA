@@ -1,0 +1,35 @@
+Multiplication Table
+
+Write a program to print multiplication table of n
+Sample Input :
+2
+Sample Output :
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+
+Solution:
+
+import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[] args) {
+		// Write your code here
+        Scanner s=new Scanner(System.in);
+        int n;
+        n=s.nextInt();
+        int i=1;
+        while(i<=10){
+            System.out.println(n*i);
+            i=i+1;
+        }
+
+	}
+}
