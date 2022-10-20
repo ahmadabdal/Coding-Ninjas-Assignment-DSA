@@ -1,0 +1,31 @@
+Binary to decimal
+
+Given a binary number as an integer N, convert it into decimal and print.
+Input format :
+An integer N in the Binary Format
+Output format :
+Corresponding Decimal number (as integer)
+
+Solution:
+
+import java.util.*;
+public class Main {
+	
+	public static void main(String[] args) {
+		// Write your code here
+        Scanner kb=new Scanner(System.in);
+        int n=kb.nextInt();
+        int sum=0;
+        int a,p=0;
+        int temp=n;
+        while(temp>0)
+        {
+            a=temp%10;
+            sum=sum+a*(int)(Math.pow(2,p));
+            p++;
+            temp=temp/10;
+        }
+        System.out.print(sum);
+
+	}
+}
