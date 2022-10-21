@@ -1,0 +1,32 @@
+Number Star pattern 
+
+Print the following pattern for given number of rows.
+
+5432*
+543*1
+54*21
+5*321
+*4321
+
+Solution:
+
+import java.util.Scanner;
+public class runner {
+	public static void main(String[] args) {
+
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                if(i+j==n+1){
+                    System.out.print("*");
+                }
+                else{
+                System.out.print(n-j+1);
+                }
+            }
+            System.out.println();
+            
+        }
+    }
+}
