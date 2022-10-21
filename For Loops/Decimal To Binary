@@ -1,0 +1,23 @@
+Decimal to Binary
+
+Given a decimal number (integer N), convert it into binary and print.
+The binary number should be in the form of an integer.
+
+Solution:
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        long binary=0,pow=1;
+        while(n>0){
+            int lastbit= n%2;
+            binary=binary+ (lastbit*pow);
+            pow=pow*10;
+            n=n/2;
+        }
+        System.out.print(binary);
+        
+    }
+}
