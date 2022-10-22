@@ -1,0 +1,19 @@
+Linear Search
+
+You have been given a random integer array/list(ARR) of size N, and an integer X. You need to search for the integer X in the given array/list using 'Linear Search'.
+Solution:
+
+
+public class Solution {
+
+    public static int linearSearch(int arr[], int x) {
+		//Your code goes here
+       	for(int i=0;i<arr.length;i++){
+            if(arr[i]==x){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+
