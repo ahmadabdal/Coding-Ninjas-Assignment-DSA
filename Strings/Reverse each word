@@ -1,0 +1,33 @@
+Reverse Each Word
+
+Aadil has been provided with a sentence in the form of a string as a function parameter. The task is to implement 
+a function so as to print the sentence such that each word in the sentence is reversed.
+
+Solution:
+import java.util.Scanner;
+public class Solution {
+
+	// Return the reversed string. No need to print
+	public static String reverseEachWord(String input) {
+		// Write your code here
+String reverseWord = "",result = "";
+		int start = 0,j,end;
+		for(int i= 0;i < input.length();i++) {
+			if(input.charAt(i) == ' ') {
+				end = i - 1;
+				reverseWord = "";
+				for(j = end;j >= start;j--) {
+					reverseWord += input.charAt(j);
+				}
+				start  = i + 1;
+				result = result + reverseWord + " ";
+			}
+		}
+			reverseWord = "";
+			for(j = input.length() - 1;j >= start;j--) {
+				reverseWord += input.charAt(j);
+			}
+			result = result + reverseWord + " ";		
+		return result;
+	}
+}
