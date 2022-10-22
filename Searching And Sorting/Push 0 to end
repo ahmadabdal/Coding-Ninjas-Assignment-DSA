@@ -1,0 +1,25 @@
+Push Zeros to end
+Send Feedback
+You have been given a random integer array/list(ARR) of size N. You have been required to push all the zeros that are present 
+in the array/list to the end of it. Also, make sure to maintain the
+relative order of the non-zero elements.
+
+Solution:
+public class Solution {  
+
+    public static void pushZerosAtEnd(int[] arr) {
+    	//Your code goes here
+        	int i=0,k=0;
+        int n=0;
+        while(i<arr.length){
+            if(arr[i]!=0){
+               n= arr[i];
+               arr[i]=arr[k];
+               arr[k]=n; 
+               k++;
+            }
+            i++;
+        }
+    }
+}
+
