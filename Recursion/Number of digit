@@ -1,0 +1,19 @@
+Number of Digits
+
+Given the number 'n', find out and return the number of digits present in a number recursively.
+
+Solution:
+
+public class Solution {
+
+	public static int count(int n){
+		//Write your code here
+        if(n==0){
+            return 0;
+        }
+        int smalloutput= count(n/10);
+        int output= smalloutput+1;
+        return output;
+
+}
+}
