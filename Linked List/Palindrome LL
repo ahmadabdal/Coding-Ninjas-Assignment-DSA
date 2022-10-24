@@ -1,0 +1,40 @@
+Palindrome LinkedList
+
+You have been given a head to a singly linked list of integers. Write a function check to whether the list given is a 'Palindrome' or not.
+
+Sample Input 1 :
+1
+9 2 3 3 2 9 -1
+Sample Output 1 :
+true
+
+Solution:
+import java.util.ArrayList;
+public class Solution {
+
+	public static boolean isPalindrome(LinkedListNode<Integer> head) {
+        LinkedListNode<Integer> temp=head;
+        ArrayList<Integer> arr=new ArrayList<>();
+        while(temp!=null)
+        {
+            arr.add(temp.data);
+            temp=temp.next;
+        }
+        int start=0;
+        int end=arr.size()-1;
+        while(start<end)
+        {
+            if(arr.get(start)!=arr.get(end))
+            {
+                return false;
+            }
+            else
+            {
+                start++;
+                end--;
+            }
+            
+        }
+        return true;
+    }
+}
