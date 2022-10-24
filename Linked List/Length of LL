@@ -1,0 +1,21 @@
+Length Of LL
+
+For a given singly linked list of integers, find and return its length. Do it using an iterative method.
+
+Solution:
+
+
+public class Solution {
+
+	public static int length(LinkedListNode<Integer> head){
+		//Your code goes here
+	 LinkedListNode<Integer> temp=head;
+        int count=0;
+        while(temp!=null){
+            temp=temp.next;
+            count++;
+        }
+        return count;
+
+    }
+}
