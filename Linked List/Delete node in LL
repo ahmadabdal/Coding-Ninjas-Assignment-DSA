@@ -1,0 +1,42 @@
+Delete Node In LL
+
+You have been given a linked list of integers. Your task is to write a function that deletes a node from a given position, 'POS'.
+
+
+Solution:
+
+
+public class Solution {
+	public static LinkedListNode<Integer> deleteNode(LinkedListNode<Integer> head, int pos) {
+		// Write your code here.
+	
+        // if(head==null)
+        //     return head;
+        // if(pos==0)
+        //     return head.next;
+        // head.next=deleteNode(head.next,pos-1);
+        // return head;
+         int i = 0;
+        LinkedListNode<Integer> temp = head;
+        if(temp == null){
+            return head;
+        }
+        if(pos == 0){
+            temp = head.next;
+            return temp;
+        }
+        while(i<pos-1 && temp.next != null){
+            temp = temp.next;
+            i++;
+        }
+        if(i==pos-1){
+            if(temp.next != null){
+               LinkedListNode<Integer> delete = temp.next;
+               temp.next = delete.next;
+            }
+        }
+        return head;
+        
+        
+    }
+}
