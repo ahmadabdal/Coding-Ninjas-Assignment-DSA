@@ -1,0 +1,43 @@
+AppendLastNToFirst
+
+You have been given a singly linked list of integers along with an integer 'N'. Write a function to append the last 'N' nodes towards
+the front of the singly linked list and returns the new head to the list.
+
+Solution:
+
+public class Solution {
+
+    public static LinkedListNode<Integer> appendLastNToFirst(LinkedListNode<Integer> head, int n) {
+        if(head==null || n==0)
+        {
+            return head;
+        }
+        
+        LinkedListNode<Integer> current=head;
+        int length=1;
+        while(current.next!=null)
+        {
+            length++;
+            current=current.next;
+        }
+        
+        if(n>length)
+        {
+            return head;
+        }
+        
+        LinkedListNode<Integer> temp=head;
+        int count=0;
+        while(count<length-n-1)
+        {
+            count++;
+            temp=temp.next;
+        }
+        
+        LinkedListNode<Integer> NewHead=temp.next;
+        temp.next=null;
+        current.next=head;
+        return NewHead;
+    }
+
+}
