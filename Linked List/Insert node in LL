@@ -1,0 +1,44 @@
+Insert Node In LL
+
+You have been given a singly linked list of integers, an integer value called 'data' and a position with the name 'pos.'
+ Write a function to add a node to the list with the 'data' at the specified position, 'pos.'
+ 
+ Solution:
+ 
+ 
+public class Solution {
+
+	public static LinkedListNode<Integer> insert(LinkedListNode<Integer> head, int pos, int data){
+        // Your code goes here
+        LinkedListNode<Integer> temp = head;
+        LinkedListNode<Integer> newNode = new LinkedListNode<>(data);
+        // CORNER CASE::insert at head
+        if(pos == 0){
+            newNode.next = head;
+            head = newNode;
+            return head;
+        }
+        
+        while(temp!=null && pos>=1){
+            if(pos == 1){
+                break;
+            }
+            temp = temp.next;
+            pos--;
+        }
+        if(temp == null){
+            return head;
+        }
+        
+        // insert at last
+        if(temp.next == null){
+            temp.next = newNode;
+            return head;
+        }
+        
+    	newNode.next = temp.next;
+        temp.next = newNode;
+        return head;
+        
+    }
+}
