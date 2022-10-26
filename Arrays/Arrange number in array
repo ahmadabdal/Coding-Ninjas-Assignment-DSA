@@ -9,7 +9,7 @@ Solution:
 public class Solution {
     
     public static void arrange(int[] arr, int n) {
-    	//Your code goes here
+    	
           int val=1, nVal=0;
      if(n!=0){
             if(n%2==0)
