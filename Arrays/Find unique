@@ -8,7 +8,6 @@ Solution:
 public class Solution{  
 
     public static int findUnique(int[] arr){
-		//Your code goes here
         int i = 0;   
         
 	while(i<arr.length){
