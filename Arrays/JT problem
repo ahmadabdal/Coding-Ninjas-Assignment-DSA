@@ -1,0 +1,39 @@
+program that takes as input a sorted array of numbers. The objective is to return the array arranged in an
+alternate order such that max value is followed by min value in a descending fashion, so that the 1st element is the
+max value, 2nd element is the min value, 3rd element is the second max value, 4th element is the second min value &
+so on.
+
+import java.util.Scanner;
+public class assignments {
+
+   public static void arrayfunction(int arr[], int n){
+       int temp[] = arr.clone();
+       int min=0;
+       int max=n-1;
+       boolean flag=true;
+       for(int i=0; i<n ;i++){
+            if(flag){
+                 arr[i]= temp[max--];
+            }
+            else{
+               arr[i]= temp[min++];
+            }
+            flag=!flag;
+       }
+   }
+    public static void main(String args[]){
+    Scanner s = new Scanner(System.in);
+    System.out.println("Enter no. of element in Array: ");
+    int n = s.nextInt();
+    System.out.println("Enter the sorted array: ");
+    int arr[] = new int[n];
+    for(int i=0; i<n; i++){
+      arr[i]=s.nextInt();
+    }
+    arrayfunction(arr,n);
+    System.out.println("Expected Result: ");
+    for (int i = 0; i < n; i++)
+        System.out.print(arr[i] + " ");
+    }  
+}
+
